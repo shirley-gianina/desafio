@@ -1,0 +1,217 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: "lato", sans-serif;
+    background: #fefefe;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.hero {
+    display: grid;
+    grid-template: 50px 1fr / 100px 1fr; 
+    grid-template-areas: "header header" 
+                         "nav movies";
+    background: #efebeb8a;
+    height: 100%;              
+} 
+
+.header {
+    grid-area: header;
+    background-color: #ffffff ;
+}
+
+.header .navbar {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    grid-template-rows: 50px;
+    justify-self: start;
+    align-items: center;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .25);
+
+}
+
+.header .navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    -webkit-text-stroke: 1px #fd6766;
+    -webkit-text-fill-color: #fff;
+}
+
+.header .navbar .logo img {
+    height: 40px;
+}
+
+.header .navbar .search {
+    justify-self: center;
+}
+
+.header .navbar .search input {
+    width: 380px;
+    height: 25px;
+    color: blue;
+    border: 1px solid #868282; 
+    border-radius: 4px;
+    
+}
+.header .navbar .profile {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-self: end;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.header .navbar .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+.header .navbar .profile a {
+    color: #044949;
+    cursor: pointer;
+    justify-items: center;
+    text-decoration: none;
+}
+
+
+.header .navbar .profile i {
+    font-size: 20px;
+    color: #000000;
+}
+
+.nav {
+    grid-area: nav;
+    background: #fd6766;
+    box-shadow: inset -20px 0px 20px rgba(255, 255, 255, .15);
+}
+
+.nav .links {
+    display: grid;
+    grid-template-rows: repeat(3, 80px);
+    height: calc(100vh - 50px);
+    position: fixed;
+    left: 15px;
+    top: 70px;
+}
+
+.nav .links .ajustes {
+    align-self: end;
+    margin-bottom: 40px;
+}
+
+.nav .links a {
+    display: grid;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #f8f8f8;
+    font-size: 15px;
+}
+
+.nav .links i {
+    display: grid;
+    justify-items: center;
+    font-size: 25px;
+    color: #ffffff;
+    align-items: center;
+}
+
+.movies {
+    grid-area: movies;
+}
+
+.movies   {
+    display: grid;
+    grid-template: repeat(6, auto) / repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 30px;
+}
+
+.movies  h3 { 
+    grid-column: 1 / span 3;
+    text-transform: capitalize;
+}
+
+.movies  a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+}
+
+
+.movies-post {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    min-height: 200px;
+    justify-self: center;
+    background-image: url('../imagenes/pets.jpg');
+    background-size: cover;
+}
+
+.movies-description {
+    background: #fd6766bd;
+    position: absolute;
+    display: none;
+    font-size: 12px;
+    text-transform: capitalize;
+    justify-content: space-evenly;
+    color: white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50%;
+}
+
+.movies-post:hover .movies-description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+
+@media screen and (max-width: 768px){
+    .movies {
+        grid-template: repeat(12, auto) / 1fr;
+    }
+
+    .movies h3 {
+        grid-column: auto;
+    }
+
+    .header .navbar .search input {
+        width: 200px;
+        padding: 0 10px;
+        text-overflow: ellipsis;
+    }
+
+    .header .navbar .profile a {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
